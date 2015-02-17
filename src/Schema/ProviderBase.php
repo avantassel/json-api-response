@@ -130,6 +130,14 @@ abstract class ProviderBase implements SchemaProviderInterface
     }
 
     /**
+     * @inheritdoc
+     */
+    public function getLinks($resource)
+    {
+        return [];
+    }
+
+    /**
      * @return string
      */
     protected function getIdentityProperty()
