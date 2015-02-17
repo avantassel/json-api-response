@@ -76,6 +76,8 @@ class ProviderContainer implements ContainerInterface
             return $this->createdProviders[$resourceType];
         }
 
+        assert('isset($this->providerMapping[$resourceType])', 'Have you added provider for `'.$resourceType.'`?');
+
         $className = $this->providerMapping[$resourceType];
         $this->createdProviders[$resourceType] = ($provider = new $className);
 
