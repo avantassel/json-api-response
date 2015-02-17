@@ -1,6 +1,7 @@
 filter:
     excluded_paths:
         - 'tests/*'
+        - 'sample/*'
 
 tools:
     php_sim: true

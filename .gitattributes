@@ -6,3 +6,4 @@
 /.scrutinizer.yml   export-ignore
 /.travis.yml        export-ignore
 /tests              export-ignore
+/sample             export-ignore
