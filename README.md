@@ -1,5 +1,10 @@
 # JSON API responses
 
+[![Latest Stable Version](https://poser.pugx.org/neomerx/json-api-response/v/stable.svg)](https://packagist.org/packages/neomerx/json-api-response)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/neomerx/json-api-response/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/neomerx/json-api-response/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/neomerx/json-api-response/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/neomerx/json-api-response/?branch=master)
+[![Build Status](https://travis-ci.org/neomerx/json-api-response.svg?branch=master)](https://travis-ci.org/neomerx/json-api-response)
+
 Framework agnostic [JSON API](http://jsonapi.org/) response implementation.
 
 This package covers transforming PHP objects to JavaScript Object Notation (JSON) as described in [JSON API Document Structure](http://jsonapi.org/format/#document-structure).
