@@ -1,11 +1,11 @@
 # JSON API responses
 
-[![Version](https://img.shields.io/packagist/v/neomerx/json-api-response.svg)]()
+[![Version](https://img.shields.io/packagist/v/neomerx/json-api-response.svg)](https://packagist.org/packages/neomerx/json-api-response)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/neomerx/json-api-response/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/neomerx/json-api-response/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/neomerx/json-api-response/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/neomerx/json-api-response/?branch=master)
 [![Build Status](https://travis-ci.org/neomerx/json-api-response.svg?branch=master)](https://travis-ci.org/neomerx/json-api-response)
-[![HHVM](https://img.shields.io/hhvm/neomerx/json-api-response.svg)]()
-[![License](https://img.shields.io/packagist/l/neomerx/json-api-response.svg)]()
+[![HHVM](https://img.shields.io/hhvm/neomerx/json-api-response.svg)](https://travis-ci.org/neomerx/json-api-response)
+[![License](https://img.shields.io/packagist/l/neomerx/json-api-response.svg)](https://packagist.org/packages/neomerx/json-api-response)
 
 Framework agnostic [JSON API](http://jsonapi.org/) response implementation.
 
