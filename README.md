@@ -205,6 +205,8 @@ Full source code for this sample is [here](/sample/)
 
 Every aspect of output could be customized with `Settings` class. See [SettingsInterface](src/Contracts/SettingsInterface.php) for details.
 
+For more example usage see [this test suit](tests/Integration/EncoderTest.php).
+
 ## Questions?
 
 Do not hesitate to contact us on [@twitter](https://twitter.com/NeomerxCom) or post an [issue](https://github.com/neomerx/json-api-response/issues).
