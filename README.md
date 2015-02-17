@@ -93,8 +93,8 @@ $post = new Post(
     'Mauris cursus, nisi quis pulvinar maximus, dui orci hendrerit felis.',
     new Author('3', 'John Author'),
     [
-        new Comment('7', 'Morbi rutrum libero urna, quis ullamcorper nisi mollis in. Donec.'),
-        new Comment('9', 'In aliquam nec felis eu venenatis. Nam vulputate, est vitae facilisis.'),
+        new Comment('7', 'Morbi rutrum libero urna, quis ullamcorper nisi mollis in.'),
+        new Comment('9', 'In aliquam nec felis eu venenatis. Nam vulputate, est.'),
     ]
 );
 ```
@@ -102,6 +102,30 @@ $post = new Post(
 You will create classes that provide descriptions for your data types
 
 ``` php
+class PostProvider extends ProviderBase
+{
+    public function __construct()
+    {
+        parent::__construct('id', 'http://example.com/posts/', 'posts');
+    }
+
+    public function getAttributes($post)
+    {
+        return [
+            'title' => $post->title,
+            'body'  => $post->body,
+        ];
+    }
+
+    public function getLinks($post)
+    {
+        return [
+            'author'   => $post->author,
+            'comments' => $post->getComments(),
+        ];
+    }
+}
+
 class AuthorProvider extends ProviderBase
 {
     public function __construct()
@@ -144,7 +168,8 @@ $provider = new ProviderContainer([
 
 $encoder  = new Encoder(Settings::defaults(), $provider);
 
-echo $encoder->encode($post); // use $encoder->encode($post, null, JSON_PRETTY_PRINT); for nice output
+// use $encoder->encode($post) for non-formatted output
+echo $encoder->encode($post, null, JSON_PRETTY_PRINT);
 ```
 
 The output will be
@@ -164,11 +189,11 @@ The output will be
             "comments": [
                 {
                     "id": "7",
-                    "body": "Morbi rutrum libero urna, quis ullamcorper nisi mollis in. Donec."
+                    "body": "Morbi rutrum libero urna, quis ullamcorper nisi mollis in."
                 },
                 {
                     "id": "9",
-                    "body": "In aliquam nec felis eu venenatis. Nam vulputate, est vitae facilisis."
+                    "body": "In aliquam nec felis eu venenatis. Nam vulputate, est."
                 }
             ]
         }
@@ -182,7 +207,7 @@ Every aspect of output could be customized with `Settings` class. See [SettingsI
 
 ## Questions?
 
-Do not hesitate to contact us on [@twitter](https://twitter.com/NeomerxCom) or post and [issue](https://github.com/neomerx/json-api-response/issues).
+Do not hesitate to contact us on [@twitter](https://twitter.com/NeomerxCom) or post an [issue](https://github.com/neomerx/json-api-response/issues).
 
 ## Testing
 

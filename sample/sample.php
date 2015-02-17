@@ -114,8 +114,8 @@ $post = new Post(
     'Mauris cursus, nisi quis pulvinar maximus, dui orci hendrerit felis.',
     new Author('3', 'John Author'),
     [
-        new Comment('7', 'Morbi rutrum libero urna, quis ullamcorper nisi mollis in. Donec.'),
-        new Comment('9', 'In aliquam nec felis eu venenatis. Nam vulputate, est vitae facilisis.'),
+        new Comment('7', 'Morbi rutrum libero urna, quis ullamcorper nisi mollis in.'),
+        new Comment('9', 'In aliquam nec felis eu venenatis. Nam vulputate, est.'),
     ]
 );
 
