@@ -2,7 +2,6 @@
   "name": "neomerx/json-api-response",
   "description": "Framework agnostic JSON API (jsonapi.org) responses",
   "keywords": [
-    "neomerx/json-api",
     "jsonapi.org",
     "json-api",
     "jsonapi",
