@@ -21,6 +21,12 @@ abstract class CommentSchema
     const PROPERTY_ID    = 'identity';
     const PROPERTY_BODY  = 'body';
 
+    /**
+     * @param string $identity
+     * @param string $body
+     *
+     * @return Comment
+     */
     public static function create($identity, $body = null)
     {
         $body = $body !== null ? $body : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla.';

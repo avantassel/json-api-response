@@ -21,6 +21,9 @@ use \Prophecy\Exception\Doubler\MethodNotFoundException;
 
 class CommentProvider extends ProviderBase
 {
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         parent::__construct(CommentSchema::PROPERTY_ID, 'http://example.com/comments/', 'comments');

@@ -24,6 +24,15 @@ abstract class PostSchema
     const PROPERTY_AUTHOR   = 'author';
     const PROPERTY_COMMENTS = 'comments';
 
+    /**
+     * @param string $identity
+     * @param string $title
+     * @param Author $author
+     * @param array  $comments
+     * @param string $body
+     *
+     * @return Post
+     */
     public static function create(
         $identity,
         $title,

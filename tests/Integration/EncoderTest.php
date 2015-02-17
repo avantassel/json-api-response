@@ -33,6 +33,9 @@ use \Neomerx\JsonApi\Tests\Data\PostProviderNoUrlTemplates;
  */
 class EncoderTest extends BaseIntegrationTestCase
 {
+    /**
+     * @var ProviderContainer
+     */
     private $providerContainer;
 
     public function setUp()

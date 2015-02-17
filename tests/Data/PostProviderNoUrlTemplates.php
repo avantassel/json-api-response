@@ -18,6 +18,9 @@
 
 class PostProviderNoUrlTemplates extends PostProvider
 {
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         parent::__construct();

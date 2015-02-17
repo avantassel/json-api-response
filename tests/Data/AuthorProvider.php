@@ -21,6 +21,9 @@ use \Prophecy\Exception\Doubler\MethodNotFoundException;
 
 class AuthorProvider extends ProviderBase
 {
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         parent::__construct(AuthorSchema::PROPERTY_ID, 'http://example.com/people/', 'people');

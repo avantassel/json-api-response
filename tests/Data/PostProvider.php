@@ -20,6 +20,9 @@ use \Neomerx\JsonApi\Schema\ProviderBase;
 
 class PostProvider extends ProviderBase
 {
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         parent::__construct(PostSchema::PROPERTY_ID, '/posts/', 'posts', 'http://example.com/');

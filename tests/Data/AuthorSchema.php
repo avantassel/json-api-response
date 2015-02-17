@@ -21,6 +21,12 @@ abstract class AuthorSchema
     const PROPERTY_ID   = 'identity';
     const PROPERTY_NAME = 'name';
 
+    /**
+     * @param string $identity
+     * @param string $name
+     *
+     * @return Author
+     */
     public static function create($identity, $name)
     {
         $author = new Author();

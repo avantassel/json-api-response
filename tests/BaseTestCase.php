@@ -22,7 +22,14 @@ use \Neomerx\JsonApi\Tests\Data\CommentSchema;
 
 abstract class BaseTestCase extends PHPUnit_Framework_TestCase
 {
+    /**
+     * @var array
+     */
     protected $posts;
+
+    /**
+     * @var array
+     */
     protected $comments;
 
     public function setUp()
