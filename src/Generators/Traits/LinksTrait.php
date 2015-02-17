@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+use \stdClass;
 use \Neomerx\JsonApi\Generators\LinkToSingleGenerator;
 use \Neomerx\JsonApi\Generators\DocumentLinksGenerator;
 use \Neomerx\JsonApi\Generators\DocumentLinkedGenerator;
@@ -33,7 +34,7 @@ trait LinksTrait
      * @param DocumentLinkedGenerator          $linkedGenerator
      * @param DataLinkCollectionRepresentation $settings
      *
-     * @return array|object
+     * @return array|stdClass
      */
     protected function generateLinkToCollection(
         array $linkedResources,

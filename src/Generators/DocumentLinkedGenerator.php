@@ -113,6 +113,8 @@ class DocumentLinkedGenerator
     /**
      * @param array    $resources
      * @param Provider $provider
+     *
+     * @return void
      */
     public function addArray(array $resources, Provider $provider)
     {
@@ -131,7 +133,7 @@ class DocumentLinkedGenerator
         }
 
         // add generation settings
-        if (isset($this->generationSettings[$jsonType]) === false and empty($resources) === false) {
+        if (isset($this->generationSettings[$jsonType]) === false && empty($resources) === false) {
             $this->generationSettings[$jsonType] = $this->settings->linkedResource($this->mainResource, $resources[0]);
         }
 
@@ -139,7 +141,7 @@ class DocumentLinkedGenerator
     }
 
     /**
-     * @return object|null
+     * @return stdClass|null
      */
     public function generate()
     {
@@ -194,6 +196,8 @@ class DocumentLinkedGenerator
     /**
      * @param string   $jsonType
      * @param Provider $provider
+     *
+     * @return void
      */
     private function addProvider($jsonType, Provider $provider)
     {
@@ -206,10 +210,12 @@ class DocumentLinkedGenerator
      * @param string $jsonType
      * @param string $resourceId
      * @param object $resource
+     *
+     * @return void
      */
     private function addResource($jsonType, $resourceId, $resource)
     {
-        assert('is_string($jsonType) and is_string($resourceId) and is_object($resource)');
+        assert('is_string($jsonType) && is_string($resourceId) && is_object($resource)');
 
         if (isset($this->addedResources[$jsonType][$resourceId]) === false) {
             $this->addedResources[$jsonType][$resourceId] = $resource;

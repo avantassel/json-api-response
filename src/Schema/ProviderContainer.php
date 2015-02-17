@@ -41,11 +41,13 @@ class ProviderContainer implements ContainerInterface
     /**
      * @param string $resourceType
      * @param string $providerClass
+     *
+     * @return void
      */
     public function register($resourceType, $providerClass)
     {
-        assert('is_string($resourceType) and !empty($resourceType)');
-        assert('is_string($providerClass) and !empty($providerClass)');
+        assert('is_string($resourceType) && empty($resourceType) === false');
+        assert('is_string($providerClass) && empty($providerClass) === false');
         assert('isset($this->providerMapping[$resourceType]) === false');
 
         $this->providerMapping[$resourceType] = $providerClass;
@@ -53,6 +55,8 @@ class ProviderContainer implements ContainerInterface
 
     /**
      * @param array $providers
+     *
+     * @return void
      */
     public function registerArray(array $providers)
     {

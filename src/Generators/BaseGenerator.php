@@ -67,7 +67,7 @@ abstract class BaseGenerator
         $hasType
     ) {
         assert(
-            'is_int($representationType) and is_bool($hasAttributes) and is_bool($hasReference) and is_bool($hasType)'
+            'is_int($representationType) && is_bool($hasAttributes) && is_bool($hasReference) && is_bool($hasType)'
         );
 
         $this->representationType = $representationType;
@@ -93,11 +93,11 @@ abstract class BaseGenerator
 
         //  An ID MUST be a string which SHOULD only contain alphanumeric characters, dashes and underscores.
         // @see http://jsonapi.org/format/#document-structure-resource-object-ids
-        assert('is_string($resourceId) and preg_match(\'/^[a-z_\-0-9]+$/i\', $resourceId)');
+        assert('is_string($resourceId) && preg_match(\'/^[a-z_\-0-9]+$/i\', $resourceId)');
 
         if ($this->hasAttributes === true) {
             foreach ($provider->getAttributes($resource) as $fieldName => $value) {
-                assert('is_string($fieldName) and in_array($fieldName, $this->reservedFieldNames) === false');
+                assert('is_string($fieldName) && in_array($fieldName, $this->reservedFieldNames) === false');
                 assert('is_scalar($value)');
                 $representation->{$fieldName} = $value;
             }

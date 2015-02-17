@@ -68,6 +68,7 @@ class DocumentLinksGenerator
      * @param string   $property
      * @param Provider $provider
      *
+     * @return void
      */
     public function addByProperty($property, Provider $provider)
     {
@@ -92,8 +93,8 @@ class DocumentLinksGenerator
      */
     public function addLink(array $paths, $url, $linkJsonType)
     {
-        assert('is_string($url) === true and is_string($linkJsonType) === true');
-        assert('empty($paths) === false and empty($url) === false and empty($linkJsonType) === false');
+        assert('is_string($url) === true && is_string($linkJsonType) === true');
+        assert('empty($paths) === false && empty($url) === false && empty($linkJsonType) === false');
 
         if ($this->generationSettings->isVisible() === false) {
             return;
@@ -103,7 +104,7 @@ class DocumentLinksGenerator
     }
 
     /**
-     * @return object|null
+     * @return stdClass|null
      */
     public function generate()
     {
