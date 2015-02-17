@@ -84,4 +84,10 @@ class ProviderBaseTest extends BaseUnitTestCase
 
         $this->assertEquals($expected, $this->provider->getUrls());
     }
+
+    public function testGetLinks()
+    {
+        // for full test coverage only
+        $this->assertEquals([], $this->provider->getLinks(null));
+    }
 }
