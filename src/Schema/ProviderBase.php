@@ -139,10 +139,12 @@ abstract class ProviderBase implements SchemaProviderInterface
 
     /**
      * @param string $identityProperty
+     *
+     * @return void
      */
     protected function setIdentityProperty($identityProperty)
     {
-        assert('is_string($identityProperty) === true and empty($identityProperty) === false');
+        assert('is_string($identityProperty) === true && empty($identityProperty) === false');
         $this->identityProperty = $identityProperty;
     }
 
@@ -156,19 +158,23 @@ abstract class ProviderBase implements SchemaProviderInterface
 
     /**
      * @param string $url
+     *
+     * @return void
      */
     protected function setUrl($url)
     {
-        assert('is_string($url) === true and empty($url) === false');
+        assert('is_string($url) === true && empty($url) === false');
         $this->url = $url;
     }
 
     /**
      * @param string $type
+     *
+     * @return void
      */
     protected function setJsonType($type)
     {
-        assert('is_string($type) === true and empty($type) === false');
+        assert('is_string($type) === true && empty($type) === false');
         $this->type = $type;
     }
 
@@ -182,6 +188,8 @@ abstract class ProviderBase implements SchemaProviderInterface
 
     /**
      * @param string $baseUrl
+     *
+     * @return void
      */
     protected function setBaseUrl($baseUrl)
     {
@@ -199,6 +207,8 @@ abstract class ProviderBase implements SchemaProviderInterface
 
     /**
      * @param array $urlTemplates
+     *
+     * @return void
      */
     protected function setUrlTemplates(array $urlTemplates)
     {
@@ -213,9 +223,9 @@ abstract class ProviderBase implements SchemaProviderInterface
      */
     protected function composeUrl($baseUrl, $tail)
     {
-        assert('is_string($baseUrl) and is_string($tail)');
+        assert('is_string($baseUrl) && is_string($tail)');
 
-        if (empty($baseUrl) === false and empty($tail) === false) {
+        if (empty($baseUrl) === false && empty($tail) === false) {
             $baseUrl = rtrim($baseUrl, '/');
             if ($tail[0] !== '/') {
                 $tail = '/'.$tail;

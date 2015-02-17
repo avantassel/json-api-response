@@ -50,7 +50,7 @@ class LinkToCollectionGenerator extends BaseGenerator
      * @param array    $resources
      * @param Provider $provider
      *
-     * @return array|object
+     * @return array|stdClass
      */
     public function generate(array $resources, Provider $provider)
     {

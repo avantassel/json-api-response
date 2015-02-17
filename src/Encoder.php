@@ -73,15 +73,15 @@ class Encoder
      * @param object|array|null $data
      * @param object|null       $meta
      *
-     * @return object
+     * @return stdClass
      *
      * @SuppressWarnings(PHPMD.NPathComplexity)
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      */
     public function compose($data, $meta = null)
     {
-        assert('is_object($meta) or is_null($meta)');
-        assert('is_object($data) or is_array($data) or is_null($data)');
+        assert('is_object($meta) || is_null($meta)');
+        assert('is_object($data) || is_array($data) || is_null($data)');
 
         $result = new stdClass();
 
@@ -91,10 +91,10 @@ class Encoder
         if ($data === null) {
             $jsonType       = self::KEY_PRIMARY_DEFAULT;
             $representation = null;
-        } elseif (is_array($data) and empty($data) === true) {
+        } elseif (is_array($data) && empty($data) === true) {
             $jsonType       = self::KEY_PRIMARY_DEFAULT;
             $representation = [];
-        } elseif (is_array($data) and empty($data) === false) {
+        } elseif (is_array($data) && empty($data) === false) {
             /** @var array $data */
             $mainResource    = $data[0];
             $linkedGenerator = $this->createDocumentLinkedGenerator($mainResource, $this->settings);
@@ -114,17 +114,17 @@ class Encoder
             $jsonType        = $provider->getJsonType();
         }
 
-        if (isset($meta) and isset($mainResource) and $this->settings->meta($mainResource)->isVisible()) {
+        if (isset($meta) && isset($mainResource) && $this->settings->meta($mainResource)->isVisible()) {
             $result->{self::KEY_META} = $meta;
         }
 
-        if (isset($linksGenerator) === true and $this->settings->links($mainResource)->isVisible()) {
+        if (isset($linksGenerator) === true && $this->settings->links($mainResource)->isVisible()) {
             $result->{self::KEY_LINKS} = $linksGenerator->generate();
         }
 
         $result->{$jsonType} = $representation;
 
-        if ($this->settings->linked($mainResource)->isVisible() and isset($linkedGenerator) === true) {
+        if ($this->settings->linked($mainResource)->isVisible() && isset($linkedGenerator) === true) {
             $result->{self::KEY_LINKED} = $linkedGenerator->generate();
         }
 

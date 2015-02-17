@@ -514,12 +514,12 @@ class Settings implements SettingsInterface
     }
 
     /**
-     * @param object $resource1
-     * @param object $settings
-     * @param array  $alter
-     * @param array  $properties
+     * @param object   $resource1
+     * @param object   $settings
+     * @param array    $alter
+     * @param string[] $properties
      *
-     * @return mixed
+     * @return object
      */
     private function merge1($resource1, $settings, array $alter, array $properties)
     {
@@ -536,13 +536,13 @@ class Settings implements SettingsInterface
     }
 
     /**
-     * @param object $resource1
-     * @param object $resource2
-     * @param object $settings
-     * @param array  $alter
-     * @param array  $properties
+     * @param object   $resource1
+     * @param object   $resource2
+     * @param object   $settings
+     * @param array    $alter
+     * @param string[] $properties
      *
-     * @return mixed
+     * @return object
      */
     private function merge2($resource1, $resource2, $settings, array $alter, array $properties)
     {

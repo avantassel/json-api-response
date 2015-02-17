@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+use \stdClass;
 use \Neomerx\JsonApi\Contracts\SettingsInterface;
 use \Neomerx\JsonApi\Contracts\SchemaProviderInterface as Provider;
 
@@ -46,7 +47,7 @@ class LinkToSingleGenerator extends BaseGenerator
      * @param object   $resource
      * @param Provider $provider
      *
-     * @return object|string
+     * @return stdClass|string
      */
     public function generate($resource, Provider $provider)
     {
@@ -79,7 +80,7 @@ class LinkToSingleGenerator extends BaseGenerator
      * @param object   $resource
      * @param Provider $provider
      *
-     * @return object
+     * @return stdClass
      */
     protected function generateAsObject($resource, Provider $provider)
     {

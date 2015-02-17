@@ -84,7 +84,7 @@ class ResourceGenerator extends LinkToSingleGenerator
         DocumentLinkedGenerator $linkedGenerator,
         DocumentLinksGenerator $linksGenerator
     ) {
-        assert('is_bool($hasLinks) and is_bool($documentHasLinks)');
+        assert('is_bool($hasLinks) && is_bool($documentHasLinks)');
 
         parent::__construct($representationType, $hasAttributes, $hasReference, $hasType);
 
@@ -101,14 +101,14 @@ class ResourceGenerator extends LinkToSingleGenerator
      * @param object   $resource
      * @param Provider $provider
      *
-     * @return object
+     * @return stdClass
      */
     protected function generateAsObject($resource, Provider $provider)
     {
         $result = $this->generateBasicProperties($resource, $provider);
 
         $links = new stdClass();
-        if ($this->documentHasLinks === true or $this->hasLinks === true) {
+        if ($this->documentHasLinks === true || $this->hasLinks === true) {
             $this->generateLinks($resource, $provider, $links);
         }
 
@@ -128,12 +128,14 @@ class ResourceGenerator extends LinkToSingleGenerator
      * @param object   $resource
      * @param Provider $provider
      * @param stdClass $links
+     *
+     * @return void
      */
     private function generateLinks($resource, Provider $provider, stdClass $links)
     {
         foreach ($provider->getLinks($resource) as $linksProperty => $linkedResource) {
             assert('is_string($linksProperty)');
-            assert('is_object($linkedResource) or is_array($linkedResource) or is_null($linkedResource)');
+            assert('is_object($linkedResource) || is_array($linkedResource) || is_null($linkedResource)');
 
             if (is_array($linkedResource) === true) {
                 if (empty($linkedResource) === true) {
@@ -173,8 +175,8 @@ class ResourceGenerator extends LinkToSingleGenerator
         $linkedProvider      = $this->container->getProvider($firstLinkedResource);
         $settings            = $this->settings->dataSingleLinkCollection($resource, $firstLinkedResource);
 
-        // if links should be shown and they should be on document level...
-        if ($settings->hasReference() === true and $this->documentHasLinks === true) {
+        // if links should be shown && they should be on document level...
+        if ($settings->hasReference() === true && $this->documentHasLinks === true) {
             // ... turn off show href in links and ...
             $settings->setHasReference(false);
             // ... add it to document's level
@@ -203,7 +205,7 @@ class ResourceGenerator extends LinkToSingleGenerator
         $settings       = $this->settings->dataSingleLinkSingle($resource, $linkedResource);
 
         // if links should be shown and they should be on document level...
-        if ($settings->hasReference() === true and $this->documentHasLinks === true) {
+        if ($settings->hasReference() === true && $this->documentHasLinks === true) {
             // ... turn off show href in links and ...
             $settings->setHasReference(false);
             // ... add it to document's level

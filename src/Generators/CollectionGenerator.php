@@ -84,7 +84,7 @@ class CollectionGenerator extends LinkToCollectionGenerator
         DocumentLinkedGenerator $linkedGenerator,
         DocumentLinksGenerator $linksGenerator
     ) {
-        assert('is_bool($hasLinks) and is_bool($documentHasLinks)');
+        assert('is_bool($hasLinks) && is_bool($documentHasLinks)');
 
         parent::__construct($representationType, $hasAttributes, $hasReference, $hasType);
 
@@ -110,7 +110,7 @@ class CollectionGenerator extends LinkToCollectionGenerator
         $forceHideLinkHref = false;
 
         // if document has links section then place there urls resource links
-        if ($this->documentHasLinks === true and empty($resources) === false) {
+        if ($this->documentHasLinks === true && empty($resources) === false) {
             $resource = $resources[0];
 
             foreach ($provider->getLinks($resources[0]) as $linksProperty => $linkedResource) {
