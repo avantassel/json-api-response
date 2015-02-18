@@ -160,13 +160,13 @@ class CommentProvider extends ProviderBase
 And encode the data
 
 ``` php
-$provider = new ProviderContainer([
+$container = new ProviderContainer([
     Post::class    => PostProvider::class,
     Author::class  => AuthorProvider::class,
     Comment::class => CommentProvider::class,
 ]);
 
-$encoder  = new Encoder(Settings::defaults(), $provider);
+$encoder = new Encoder(Settings::defaults(), $container);
 
 // use $encoder->encode($post) for non-formatted output
 echo $encoder->encode($post, null, JSON_PRETTY_PRINT);
@@ -203,9 +203,7 @@ The output will be
 
 Full source code for this sample is [here](/sample/)
 
-Every aspect of output could be customized with `Settings` class. See [SettingsInterface](src/Contracts/SettingsInterface.php) for details.
-
-For more example usage see [this test suit](tests/Integration/EncoderTest.php).
+Every aspect of output could be customized with `Settings` class. For more example usage see [this test suit](tests/Integration/EncoderTest.php).
 
 ## Questions?
 

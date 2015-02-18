@@ -119,12 +119,13 @@ $post = new Post(
     ]
 );
 
-$provider = new ProviderContainer([
+$container = new ProviderContainer([
     Post::class    => PostProvider::class,
     Author::class  => AuthorProvider::class,
     Comment::class => CommentProvider::class,
 ]);
 
-$encoder  = new Encoder(Settings::defaults(), $provider);
+$encoder = new Encoder(Settings::defaults(), $container);
 
+// use $encoder->encode($post) for non-formatted output
 echo $encoder->encode($post, null, JSON_PRETTY_PRINT);
